@@ -31,7 +31,7 @@ for(var i=0; i < Bicicleta.allBicis.length; i++){
 }
 
 var a= new Bicicleta(1,'rojo', 'urbana', [51.509865,-0.118092]);
-var b= new Bicicleta(2,'blanca', 'urbana', [-34.596932,-58.3808287]);
+var b= new Bicicleta(2,'blanca', 'urbana', [51.509768, -0.119793]);
 Bicicleta.add(a);
 Bicicleta.add(b);
 
