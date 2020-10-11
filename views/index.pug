@@ -1,94 +1,133 @@
 extends layout
 
 block content
-  nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
+  // Navigation
+  nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3
     .container
-      a.navbar-brand.js-scroll-trigger(href='#page-top') 
+      a.navbar-brand.js-scroll-trigger(href='#page-top')
       button.navbar-toggler.navbar-toggler-right(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
-        | Menu
-        i.fas.fa-bars
+        span.navbar-toggler-icon
       #navbarResponsive.collapse.navbar-collapse
-        ul.navbar-nav.ml-auto
+        ul.navbar-nav.ml-auto.my-2.my-lg-0
           li.nav-item
             a.nav-link.js-scroll-trigger(href='#about') Nosotros
           li.nav-item
-            a.nav-link.js-scroll-trigger(href='#projects') Bicicletas
+            a.nav-link.js-scroll-trigger(href='#services') Bicicletas
           li.nav-item
-            a.nav-link.js-scroll-trigger(href='#signup') Contacto
+            a.nav-link.js-scroll-trigger(href='#portfolio') Promociones
+          li.nav-item
+            a.nav-link.js-scroll-trigger(href='#contact') Contacto
   // Masthead
   header.masthead
-    .container.d-flex.h-100.align-items-center
-      .mx-auto.text-center
-        h1.mx-auto.my-0.text-uppercase Red bicicletas
-        h2.text-white-50.mx-auto.mt-2.mb-5 La primera comunidad de ciclistas urbanos
-        a.btn.btn-primary.js-scroll-trigger(href='#about') Comenzar
-  // About
-  section#about.about-section.text-center
+    .container.h-100
+      .row.h-100.align-items-center.justify-content-center.text-center
+        .col-lg-10.align-self-end
+          h1.text-uppercase.text-white.font-weight-bold Red de Bicicletas
+          hr.divider.my-4
+        .col-lg-8.align-self-baseline
+          p.text-white-75.font-weight-light.mb-5
+            | Organización sin fines de lucro que tiene por objetivo organizar la red de bicicletas de la ciudad de Santa Fe.
+          a.btn.btn-primary.btn-xl.js-scroll-trigger(href='#about') Nosotros
+  // About Section
+  section#about.page-section.bg-primary
     .container
+      .row.justify-content-center
+        .col-lg-8.text-center
+          h2.text-white.mt-0 We&apos;ve got what you need!
+          hr.divider.light.my-4
+          p.text-white-50.mb-4
+            | Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!
+          a.btn.btn-light.btn-xl.js-scroll-trigger(href='#services') Get Started!
+  // Services Section
+  section#services.page-section
+    .container
+      #main_mapa
+  // Portfolio Section
+  section#portfolio
+    .container-fluid.p-0
+      .row.no-gutters
+        .col-lg-4.col-sm-6
+          a.portfolio-box(href='/images/portfolio/fullsize/1.jpg')
+            img.img-fluid(src='/images/portfolio/thumbnails/1.jpg' alt='')
+            .portfolio-box-caption
+              .project-category.text-white-50
+                | Category
+              .project-name
+                | Project Name
+        .col-lg-4.col-sm-6
+          a.portfolio-box(href='/images/portfolio/fullsize/2.jpg')
+            img.img-fluid(src='/images/portfolio/thumbnails/2.jpg' alt='')
+            .portfolio-box-caption
+              .project-category.text-white-50
+                | Category
+              .project-name
+                | Project Name
+        .col-lg-4.col-sm-6
+          a.portfolio-box(href='/images/portfolio/fullsize/3.jpg')
+            img.img-fluid(src='/images/portfolio/thumbnails/3.jpg' alt='')
+            .portfolio-box-caption
+              .project-category.text-white-50
+                | Category
+              .project-name
+                | Project Name
+        .col-lg-4.col-sm-6
+          a.portfolio-box(href='/images/portfolio/fullsize/4.jpg')
+            img.img-fluid(src='/images/portfolio/thumbnails/4.jpg' alt='')
+            .portfolio-box-caption
+              .project-category.text-white-50
+                | Category
+              .project-name
+                | Project Name
+        .col-lg-4.col-sm-6
+          a.portfolio-box(href='/images/portfolio/fullsize/5.jpg')
+            img.img-fluid(src='/images/portfolio/thumbnails/5.jpg' alt='')
+            .portfolio-box-caption
+              .project-category.text-white-50
+                | Category
+              .project-name
+                | Project Name
+        .col-lg-4.col-sm-6
+          a.portfolio-box(href='/images/portfolio/fullsize/6.jpg')
+            img.img-fluid(src='/images/portfolio/thumbnails/6.jpg' alt='')
+            .portfolio-box-caption.p-3
+              .project-category.text-white-50
+                | Category
+              .project-name
+                | Project Name
+  // Call to Action Section
+  section.page-section.bg-dark.text-white
+    .container.text-center
+      h2.mb-4 Free Download at Start Bootstrap!
+      a.btn.btn-light.btn-xl(href='https://startbootstrap.com/themes/creative/') Download Now!
+  // Contact Section
+  section#contact.page-section
+    .container
+      .row.justify-content-center
+        .col-lg-8.text-center
+          h2.mt-0 Let&apos;s Get In Touch!
+          hr.divider.my-4
+          p.text-muted.mb-5
+            | Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!
       .row
-        .col-lg-8.mx-auto
-          h2.text-white.mb-4 Built with Bootstrap 4
-          p.text-white-50
-            | Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-            a(href='https://startbootstrap.com/template-overviews/grayscale/') the preview page
-            |                             . The theme is open source, and you can use it for any purpose, personal or commercial.
-      img.img-fluid(src='/img/ipad.png' alt='')
-  // Projects
-  section#projects.projects-section.bg-light
-    .container
-      #main_map
-  // Signup
-  section#signup.signup-section
-    .container
-      .row
-        .col-md-10.col-lg-8.mx-auto.text-center
-          i.far.fa-paper-plane.fa-2x.mb-2.text-white
-          h2.text-white.mb-5 Subscribe to receive updates!
-          form.form-inline.d-flex
-            input#inputEmail.form-control.flex-fill.mr-0.mr-sm-2.mb-3.mb-sm-0(type='email' placeholder='Enter email address...')
-            button.btn.btn-primary.mx-auto(type='submit') Subscribe
-  // Contact
-  section.contact-section.bg-black
-    .container
-      .row
-        .col-md-4.mb-3.mb-md-0
-          .card.py-4.h-100
-            .card-body.text-center
-              i.fas.fa-map-marked-alt.text-primary.mb-2
-              h4.text-uppercase.m-0 Address
-              hr.my-4
-              .small.text-black-50 4923 Market Street, Orlando FL
-        .col-md-4.mb-3.mb-md-0
-          .card.py-4.h-100
-            .card-body.text-center
-              i.fas.fa-envelope.text-primary.mb-2
-              h4.text-uppercase.m-0 Email
-              hr.my-4
-              .small.text-black-50
-                a(href='#!') hello@yourdomain.com
-        .col-md-4.mb-3.mb-md-0
-          .card.py-4.h-100
-            .card-body.text-center
-              i.fas.fa-mobile-alt.text-primary.mb-2
-              h4.text-uppercase.m-0 Phone
-              hr.my-4
-              .small.text-black-50 +1 (555) 902-8832
-      .social.d-flex.justify-content-center
-        a.mx-2(href='#!')
-          i.fab.fa-twitter
-        a.mx-2(href='#!')
-          i.fab.fa-facebook-f
-        a.mx-2(href='#!')
-          i.fab.fa-github
+        .col-lg-4.ml-auto.text-center.mb-5.mb-lg-0
+          i.fas.fa-phone.fa-3x.mb-3.text-muted
+          div +1 (202) 555-0149
+        .col-lg-4.mr-auto.text-center
+          i.fas.fa-envelope.fa-3x.mb-3.text-muted
+          // Make sure to change the email address in anchor text AND the link below!
+          a.d-block(href='mailto:cristiaan3003@gmail.com') cristiaan3003@gmail.com
   // Footer
-  footer.footer.bg-black.small.text-center.text-white-50
-    .container Copyright &copy; Your Website 2020
-  // Bootstrap core JS
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
-  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js')
-  // Third party plugin JS
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js')
-  // Core theme JS
-  script(src='/js/scripts.js')
-  script(src='/js/map.js')
+  footer.bg-light.py-5
+    .container
+      .small.text-center.text-muted Copyright &copy; 2019 - Start Bootstrap
+  // Bootstrap core JavaScript
+  script(src='/vendor/jquery/jquery.min.js')
+  script(src='/vendor/bootstrap/js/bootstrap.bundle.min.js')
+  // Plugin JavaScript
+  script(src='/vendor/jquery-easing/jquery.easing.min.js')
+  script(src='/vendor/magnific-popup/jquery.magnific-popup.min.js')
+  // Custom scripts for this template
+  script(src='/javascripts/creative.min.js')
+  // mapa.js
+  script(src='/javascripts/mapa.js')
   
