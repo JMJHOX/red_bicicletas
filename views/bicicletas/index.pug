@@ -1,26 +1,30 @@
-extends ../layout
-
+extends  ../layout
 block content
-    a(href='/bicicletas/create') Nueva Bicicleta
-    table.table
-        thead
-            tr
-                th(scope='col') #
-                th(scope='col') Color
-                th(scope='col') Modelo
-                th(scope='col') Ubicacion
-        tbody
-            each bici in bicis
+    div.container.pt-5
+        a(href='/bicicletas/create').float-right.btn.btn-primary Nueva Bicicleta
+        h1 Bicicletas
+        br
+        hr
+        p.lead Listado de Bicicletas
+        table.table.table-bordered.table-sm.table-hover
+            thead
                 tr
-                    td(scope='row')=bici.id
-                    td=bici.color
-                    td=bici.modelo
-                    td=bici.ubicacion
-                    td
-                        a(href='bicicletas/' + bici.id + '/update') Editar
-                    td
-                        form.inline(action='bicicletas/' + bici.id +'/delete' method='post')
-                            input(type='hidden' name='id' value=bici.id)
-                            button.link-button(type='submit' name='submit_param' value='submit_value' class='btn') Eliminar
-
-
+                    th(scope='col').text-center #
+                    th(scope='col').text-center Code
+                    th(scope='col') Color
+                    th(scope='col') Modelo
+                    th(scope='col').text-center Ubicacion
+                    th(scope='col')
+            tbody
+                each bici in bicis
+                    tr
+                        td.text-center=bici.id
+                        td.text-center=bici.code
+                        td=bici.color
+                        td=bici.modelo
+                        td.text-center=bici.ubicacion
+                        td.text-center
+                            form(action=`/bicicletas/${bici.code}/delete` method='post').float-right
+                                input#id(type='hidden' name='id' value=bici.id)
+                                button(type='submit').btn.btn-danger Eliminar
+                            a(href=`/bicicletas/${bici.code}/update`).float-right.btn.btn-info.btn-sm.mr-2 Modificar

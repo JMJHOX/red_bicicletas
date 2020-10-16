@@ -1,26 +1,17 @@
-extends ../includes/layout_bici
+extends ../layout
 
 block content
-  div.container
-    a(href='/usuarios') Volver
-
-    br
-    br
-    br
-    
-    h1 Actualizando Usuario
-
-    br
-    br
-
-    form(action=`/usuarios/${usuario.id}/update` method='post')
-      .form-group
-        label(for='nombre') Nombre:
-        input#nombre.form-control(type='text' name='nombre' value= usuario.nombre lass=errors.nombre ? 'is-invalid' : '' )
-        if errors.nombre
-          small#nombreHelp.text-danger
-            = errors.nombre.message
-    
-    br
-    br
-    input.btn.btn-primary(type='submit' value='OK')
+    div.container.pt-5
+        a(href='/usuarios').float-right.btn.btn-primary Volver
+        h1 Modificar usuario
+        br
+        hr
+        form(action=`/usuarios/${usuario.email}/update` method='post').form-container
+            div.form-group
+                label(for='nombre') Nombre:
+                input#nombre(type='text' name='nombre' required='required' value=usuario.nombre).form-control
+            div.form-group
+                label(for='email') Email:
+                input#email(type='email' name='email' readonly='readonly' required='required' value=usuario.email).form-control
+            div.form-group
+                button.btn.btn-block.btn-lg.btn-dark(type='submit') Grabar usuario
