@@ -47,7 +47,7 @@ app.use(session({
 }));
 
 // var mongoDB = 'mongodb://victorml:victorml@127.0.0.1:27017/red_bicicletas?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false';
-//var mongoDB = 'mongodb+srv://ingvictormlnunez:Manolo842703*@cluster0.qskup.mongodb.net/test';
+//var mongoDB = 'mongodb+srv://<admin>:<1puznAuqitEsIiMM>@cluster0.lxvpc.mongodb.net/<red-bicis>?retryWrites=true&w=majority;'
 var mongoDB = process.env.MONGO_URI;
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 mongoose.Promise = global.Promise;
