@@ -7,3 +7,5 @@ Toda la documentacion del proyecto requerida en el curso se encontrará en la ca
 los puntos requeridos
 <br>
 Recuerde instalar todas las dependencias con npm install
+<br>
+Para ver el proyecto en heroku, visitar: https://red-bici-pa.herokuapp.com/
