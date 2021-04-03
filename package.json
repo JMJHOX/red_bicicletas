@@ -36,7 +36,7 @@
         "request": "^2.88.2"
     },
     "devDependencies": {
-        "jasmine": "^3.6.1",
+        "jasmine": "^3.7.0",
         "nodemon": "^2.0.4"
     }
 }
